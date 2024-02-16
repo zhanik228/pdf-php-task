@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\Exception;
 $token = '6839877085:AAH4cpIU3t7l2Glj-y5RXU0Z5CJvzwhJ2bE';
 $bot = new \TelegramBot\Api\Client($token);
 $pdfPath = 'uploads/uploaded_file.pdf';
-$pdfContent = urlencode($pdfPath);
+$pdfContent = file_get_contents($pdfPath);
 
 $sql = "SELECT * FROM users";
 $users = $conn->query($sql);
